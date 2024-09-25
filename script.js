@@ -7,12 +7,12 @@ document.addEventListener('mousemove', (e) => {
 
 document.addEventListener('mouseover', (e) => {
   if (e.target.tagName === 'A' || e.target.closest('.project') || e.target.closest('.profile-item') || e.target.closest('.contact-item') || e.target.closest('.certificate-item')) {
-    cursorBall.style.width = '70px';
-    cursorBall.style.height = '70px';
+    cursorBall.style.width = '80px';
+    cursorBall.style.height = '80px';
     cursorBall.style.backgroundColor = '#404040';  // Dark gray
   } else {
-    cursorBall.style.width = '50px';
-    cursorBall.style.height = '50px';
+    cursorBall.style.width = '20px';
+    cursorBall.style.height = '20px';
     cursorBall.style.backgroundColor = '#d3d3d3';  // Light gray
   }
 });
