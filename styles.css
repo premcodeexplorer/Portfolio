@@ -1,0 +1,229 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    cursor: none;
+  }
+  
+  header {
+    background: linear-gradient(45deg, #1a1a1a, #4a4a4a);
+    text-align: center;
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  h1 {
+    font-size: 5rem;
+    margin: 0;
+    color: white;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  p {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+    color: white;
+    z-index: 1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  #about, #projects, #certificates, #profiles, #contacts {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+  }
+  
+  #about h2, #projects h2, #certificates h2, #profiles h2, #contacts h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #1a1a1a;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  #about p {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    color: #333;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project {
+    background-color: #fff;
+    margin-bottom: 4rem;
+    padding: 2.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .project:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .project h3 {
+    font-size: 2.2rem;
+    color: #1a1a1a;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project p {
+    margin-bottom: 2rem;
+    color: #4a4a4a;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-link {
+    color: #535152;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-link:hover {
+    color: #c4c0c2;
+  }
+  
+  #certificates {
+    margin-top: 6rem;
+  }
+  
+  #certificates ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #certificates ul li {
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+  }
+  
+  #certificates ul li:hover {
+    transform: scale(1.05);
+  }
+  
+  #certificates ul li i {
+    font-size: 2rem;
+    color: #535152;
+    margin-right: 0.5rem;
+  }
+  
+  #certificates ul li a {
+    color: #4a4a4a;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  }
+  
+  #certificates ul li a:hover {
+    color: #1a1a1a;
+  }
+  
+  #profiles .profile-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  #profiles .profile-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    transition: transform 0.3s ease;
+  }
+  
+  #profiles .profile-item:hover {
+    transform: scale(1.1);
+  }
+  
+  #profiles .profile-item a {
+    color: #535152;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 0.5rem;
+    transition: color 0.3s ease;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  }
+  
+  #profiles .profile-item a:hover {
+    color:#c4c0c2 ;
+  }
+  
+  #profiles .profile-item i {
+    font-size: 2rem;
+    color: #4a4a4a;
+    margin-right: 0.5rem;
+  }
+  
+  #contacts ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #contacts ul li {
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+  }
+  
+  #contacts ul li:hover {
+    transform: scale(1.05);
+  }
+  
+  #contacts ul li i {
+    font-size: 2rem;
+    color: #535152;
+    margin-right: 0.5rem;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #1a1a1a;
+    color: white;
+    font-weight: bold;
+  }
+  
+  footer a {
+    color: #535152;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  }
+  
+  footer a:hover {
+    color: #f1e8ed;
+  }
+  
+  .cursor-ball {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    background-color: #61615e;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+    z-index: 1000;
+    mix-blend-mode: difference;
+  }
