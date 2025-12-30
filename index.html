@@ -4,70 +4,315 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prem Baba - Web Developer</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+      cursor: none;
+    }
+    
+    header {
+      background: linear-gradient(45deg, #1a1a1a, #4a4a4a);
+      text-align: center;
+      padding: 6rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    h1 {
+      font-size: 5rem;
+      margin: 0;
+      color: white;
+      z-index: 1;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    
+    header p {
+      font-size: 2rem;
+      margin: 0.5rem 0;
+      color: white;
+      z-index: 1;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+    
+    #about, #projects, #certificates, #profiles, #contacts {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+    
+    #about h2, #projects h2, #certificates h2, #profiles h2, #contacts h2 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      color: #1a1a1a;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+    
+    #about p {
+      font-size: 1.8rem;
+      line-height: 1.5;
+      color: #333;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    }
+    
+    .project {
+      background-color: #fff;
+      margin-bottom: 4rem;
+      padding: 2.5rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .project:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    
+    .project h3 {
+      font-size: 2.2rem;
+      color: #1a1a1a;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+    
+    .project p {
+      margin-bottom: 2rem;
+      color: #4a4a4a;
+      font-size: 1.6rem;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    }
+    
+    .project-link {
+      color: #535152;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    }
+    
+    .project-link:hover {
+      color: #c4c0c2;
+    }
+    
+    #certificates {
+      margin-top: 6rem;
+    }
+    
+    #certificates ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    #certificates ul li {
+      margin-bottom: 1.5rem;
+      font-size: 1.6rem;
+      display: flex;
+      align-items: center;
+      transition: transform 0.3s ease;
+    }
+    
+    #certificates ul li:hover {
+      transform: scale(1.05);
+    }
+    
+    #certificates ul li i {
+      font-size: 2rem;
+      color: #535152;
+      margin-right: 0.5rem;
+    }
+    
+    #certificates ul li a {
+      color: #4a4a4a;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    }
+    
+    #certificates ul li a:hover {
+      color: #1a1a1a;
+    }
+    
+    #profiles .profile-container {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    
+    #profiles .profile-item {
+      display: flex;
+      align-items: center;
+      font-size: 1.6rem;
+      transition: transform 0.3s ease;
+    }
+    
+    #profiles .profile-item:hover {
+      transform: scale(1.1);
+    }
+    
+    #profiles .profile-item a {
+      color: #535152;
+      text-decoration: none;
+      font-weight: bold;
+      margin-left: 0.5rem;
+      transition: color 0.3s ease;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    }
+    
+    #profiles .profile-item a:hover {
+      color:#c4c0c2 ;
+    }
+    
+    #profiles .profile-item i {
+      font-size: 2rem;
+      color: #4a4a4a;
+      margin-right: 0.5rem;
+    }
+    
+    #contacts ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    #contacts ul li {
+      margin-bottom: 1.5rem;
+      font-size: 1.6rem;
+      display: flex;
+      align-items: center;
+      transition: transform 0.3s ease;
+    }
+    
+    #contacts ul li:hover {
+      transform: scale(1.05);
+    }
+    
+    #contacts ul li i {
+      font-size: 2rem;
+      color: #535152;
+      margin-right: 0.5rem;
+    }
+    
+    #contacts ul li a {
+      color: #4a4a4a;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    
+    #contacts ul li a:hover {
+      color: #1a1a1a;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      background-color: #1a1a1a;
+      color: white;
+      font-weight: bold;
+    }
+    
+    footer a {
+      color: #535152;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    }
+    
+    footer a:hover {
+      color: #f1e8ed;
+    }
+    
+    .cursor-ball {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      background-color: #61615e;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: width 0.2s, height 0.2s, background-color 0.2s;
+      z-index: 1000;
+      mix-blend-mode: difference;
+    }
+  </style>
 </head>
 <body>
   <div class="cursor-ball"></div>
 
   <header>
-    <h1 class="animate_animated animate_pulse">Prem Baba</h1>
-    <p class="animate_animated animate_fadeInDown">Aspiring Web Developer with a Passion for Creating Interactive Experiences</p>
+    <h1>Prem Baba</h1>
+    <p>Aspiring Web Developer & ML Enthusiast with a Passion for Creating Interactive Experiences</p>
   </header>
 
   <section id="about">
-    <h2 class="animate_animated animate_fadeInUp">About Me</h2>
-    <p class="animate_animated animate_fadeInUp">
-      As a 2nd-year web development student, I'm currently learning HTML, CSS, JavaScript, Node.js, and React. I'm passionate about creating dynamic and interactive web solutions, and I'm constantly building projects to develop my skills. With a strong creative mindset and a consistent approach to learning, I'm dedicated to becoming a skilled web developer. My LeetCode profile reflects my commitment to mastering data structures and algorithms, which I believe are essential for building efficient and scalable applications.
+    <h2>About Me</h2>
+    <p>
+      As a 3rd-year web development student, I've mastered HTML, CSS, JavaScript, Node.js, and React, and have recently expanded my expertise into Machine Learning. I'm passionate about creating dynamic and interactive web solutions, and I'm constantly building projects to develop my skills. With a strong creative mindset and a consistent approach to learning, I'm dedicated to becoming a skilled full-stack developer with ML capabilities. My LeetCode profile reflects my commitment to mastering data structures and algorithms, which I believe are essential for building efficient and scalable applications.
     </p>
   </section>
 
   <section id="certificates">
-    <h2 class="animate_animated animate_fadeInUp">Certifications</h2>
+    <h2>Certifications</h2>
     <ul>
-      <li class="animate_animated animate_fadeInUp">
+      <li>
         <i class="fas fa-certificate"></i> <a href="https://www.udemy.com/certificate/UC-a10bc5b0-3925-47b4-97ea-dc0ca94f7db4/" target="_blank">Complete Node.js at Udemy</a>
       </li>
     </ul>
   </section>
 
   <section id="projects">
-    <h2 class="animate_animated animate_fadeInUp">My Projects</h2>
-    <div class="project animate_animated animate_fadeInUp">
-      <h3>Guessing Game</h3>
-      <p>A simple guessing game built with HTML, CSS, and JavaScript to enhance user interaction.</p>
-      <a href="https://premcodeexplorer.github.io/guessinggame/" class="project-link">View Project</a>
+    <h2>My Projects</h2>
+    <div class="project">
+      <h3>Income Prediction App</h3>
+      <p>A machine learning application that predicts income levels based on demographic and employment data, built using Python and deployed on Hugging Face.</p>
+      <a href="https://huggingface.co/spaces/prembaba/income-prediction-app" class="project-link" target="_blank">View Project</a>
     </div>
-    <div class="project animate_animated animate_fadeInUp">
-      <h3>Dragon Game</h3>
-      <p>An interactive dragon game designed using HTML, CSS, and JavaScript for a fun gaming experience.</p>
-      <a href="https://premcodeexplorer.github.io/dragongame/" class="project-link">View Project</a>
-    </div>
-    <div class="project animate_animated animate_fadeInUp">
-      <h3>Notes App</h3>
-      <p>A  notes app with backend capabilities built using Node.js for managing personal notes.</p>
-      <a href="https://github.com/premcodeexplorer/notes" class="project-link">View Project</a>
-    </div>
-    <div class="project animate_animated animate_fadeInUp">
+    <div class="project">
       <h3>Weather App</h3>
       <p>A weather application that fetches real-time weather data using an external API.</p>
-      <a href="https://weather-application-cvdftfksl-prem-babas-projects.vercel.app/" class="project-link">View Project</a>
+      <a href="https://weather-application-cvdftfksl-prem-babas-projects.vercel.app/" class="project-link" target="_blank">View Project</a>
+    </div>
+    <div class="project">
+      <h3>Notes App</h3>
+      <p>A notes app with backend capabilities built using Node.js for managing personal notes.</p>
+      <a href="https://github.com/premcodeexplorer/notes" class="project-link" target="_blank">View Project</a>
+    </div>
+    <div class="project">
+      <h3>Dragon Game</h3>
+      <p>An interactive dragon game designed using HTML, CSS, and JavaScript for a fun gaming experience.</p>
+      <a href="https://premcodeexplorer.github.io/dragongame/" class="project-link" target="_blank">View Project</a>
+    </div>
+    <div class="project">
+      <h3>Guessing Game</h3>
+      <p>A simple guessing game built with HTML, CSS, and JavaScript to enhance user interaction.</p>
+      <a href="https://premcodeexplorer.github.io/guessinggame/" class="project-link" target="_blank">View Project</a>
     </div>
   </section>
 
   <section id="profiles">
-    <h2 class="animate_animated animate_fadeInUp">My Profiles</h2>
+    <h2>My Profiles</h2>
     <div class="profile-container">
-      <div class="profile-item animate_animated animate_fadeInUp">
+      <div class="profile-item">
         <i class="fab fa-github"></i>
         <a href="https://github.com/premcodeexplorer" target="_blank">GitHub Profile</a>
       </div>
-      <div class="profile-item animate_animated animate_fadeInUp">
+      <div class="profile-item">
         <i class="fas fa-code"></i>
         <a href="https://leetcode.com/u/prembaba2823/" target="_blank">LeetCode Profile</a>
       </div>
@@ -75,27 +320,44 @@
   </section>
 
   <section id="contacts">
-    <h2 class="animate_animated animate_fadeInUp">Contacts</h2>
+    <h2>Contacts</h2>
     <ul>
-      <li class="animate_animated animate_fadeInUp">
+      <li>
         <i class="fas fa-phone"></i> Phone: 9112368385
       </li>
-      <li class="animate_animated animate_fadeInUp">
+      <li>
         <i class="fas fa-envelope"></i> Email: prembaba2823@gmail.com
       </li>
-      <li class="animate_animated animate_fadeInUp">
+      <li>
         <i class="fab fa-instagram"></i> <a href="https://www.instagram.com/etherealgraphite_?igsh=MTVoZXR6Nnk3dDV0cQ==" target="_blank">@etherealgraphite</a>
       </li>
-      <li class="animate_animated animate_fadeInUp">
+      <li>
         <i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/prem-baba-55519032b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">linkedin</a>
       </li>
     </ul>
   </section>
 
   <footer>
-    <p>Connect with me on <a href="https://github.com/premcodeexplorer" target="_blank">GitHub</a> | <a href="https://linkedin.com/in/your-profile" target="_blank">LinkedIn</a> | <a href="https://www.instagram.com/etherealgraphite?igsh=MTVoZXR6Nnk3dDV0cQ==" target="_blank">Instagram</a></p>
+    <p>Connect with me on <a href="https://github.com/premcodeexplorer" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/prem-baba-55519032b" target="_blank">LinkedIn</a> | <a href="https://www.instagram.com/etherealgraphite?igsh=MTVoZXR6Nnk3dDV0cQ==" target="_blank">Instagram</a></p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    const cursorBall = document.querySelector('.cursor-ball');
+    document.addEventListener('mousemove', (e) => {
+      cursorBall.style.top = e.clientY + 'px';
+      cursorBall.style.left = e.clientX + 'px';
+    });
+    document.addEventListener('mouseover', (e) => {
+      if (e.target.tagName === 'A' || e.target.closest('.project') || e.target.closest('.profile-item') || e.target.closest('#contacts ul li')) {
+        cursorBall.style.width = '80px';
+        cursorBall.style.height = '80px';
+        cursorBall.style.backgroundColor = '#404040';
+      } else {
+        cursorBall.style.width = '20px';
+        cursorBall.style.height = '20px';
+        cursorBall.style.backgroundColor = '#d3d3d3';
+      }
+    });
+  </script>
 </body>
 </html>
